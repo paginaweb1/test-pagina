@@ -1,93 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1c2c">
-  <meta name="description" content="Invitación digital de Casa Sobre la Roca: La Silla Vacía.">
-  <title>La Silla Vacía | Casa Sobre la Roca</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Silla Vacía</title>
 
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preload" as="image" href="assets/img/logo/logo-500.webp" imagesrcset="assets/img/logo/logo-500.webp 500w" imagesizes="88px">
-  <link rel="preload" as="image" href="assets/img/posts/post-01-480.webp" imagesrcset="assets/img/posts/post-01-480.webp 480w, assets/img/posts/post-01-720.webp 720w, assets/img/posts/post-01-1080.webp 1080w" imagesizes="(max-width: 640px) 92vw, 280px">
-  <link rel="stylesheet" href="assets/css/styles.css">
+<!-- Carga optimizada de iconos -->
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+
+<style>
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background:#0b1c2c;
+color:white;
+}
+
+/* SPLASH */
+#splash{
+position:fixed;
+width:100%;
+height:100%;
+background:#0b1c2c;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 1s ease 2s forwards;
+}
+
+#splash img{
+width:100%;
+max-width:400px;
+animation:zoom 1.5s ease;
+display:block;
+}
+
+@keyframes zoom{
+0%{transform:scale(0.8); opacity:0;}
+100%{transform:scale(1); opacity:1;}
+}
+
+@keyframes fadeOut{
+to{opacity:0; visibility:hidden;}
+}
+
+/* CONTENIDO */
+.container{
+padding:15px;
+opacity:0;
+animation:show 0.8s ease 2.2s forwards;
+}
+
+@keyframes show{
+to{opacity:1;}
+}
+
+.title{
+text-align:center;
+font-size:28px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+/* UBICACION */
+.location{
+display:flex;
+justify-content:center;
+margin:10px auto;
+padding:12px 20px;
+border-radius:14px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+color:#fff;
+background:linear-gradient(145deg,#1a1a1a,#d4af37);
+animation:goldGlow 3s infinite alternate;
+}
+
+@keyframes goldGlow{
+0%{box-shadow:0 0 5px #000;}
+100%{box-shadow:0 0 12px #d4af37;}
+}
+
+.invite-main{
+text-align:center;
+margin-bottom:8px;
+font-size:18px;
+font-weight:bold;
+color:#f5d27a;
+}
+
+.frase{
+text-align:center;
+font-size:14px;
+margin-bottom:20px;
+color:#ddd;
+padding:0 10px;
+font-style:italic;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+}
+
+@media(max-width:900px){
+.grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+.grid{grid-template-columns:1fr;}
+}
+
+/* CARD */
+.card{
+border-radius:15px;
+overflow:hidden;
+position:relative;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+content-visibility:auto;
+}
+
+/* MENSAJE */
+.mensaje-numero{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:6px;
+text-align:center;
+font-size:14px;
+font-weight:bold;
+background:rgba(212,175,55,0.85);
+color:#000;
+}
+
+.titulo{
+position:absolute;
+top:28px;
+left:0;
+width:100%;
+padding:8px;
+text-align:center;
+font-size:17px;
+font-weight:bold;
+background:rgba(0,0,0,0.55);
+}
+
+/* SHARE */
+.share-btn{
+position:absolute;
+bottom:10px;
+right:10px;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.share-btn i{
+font-size:22px;
+color:white;
+opacity:0.9;
+transition:0.3s;
+}
+
+.share-btn:hover i{
+color:#d4af37;
+transform:scale(1.15);
+}
+</style>
+
 </head>
+
 <body>
-  <a class="skip-link" href="#mensajes">Saltar al contenido</a>
 
-  <div class="page-shell">
-    <header class="hero" aria-labelledby="titulo-principal">
-      <nav class="topbar" aria-label="Navegación principal">
-        <a class="brand" href="./" aria-label="Inicio Casa Sobre la Roca">
-          <img src="assets/img/logo/logo-500.webp" width="64" height="64" alt="Logo Casa Sobre la Roca" decoding="async">
-          <span>Casa Sobre la Roca</span>
-        </a>
-        <a class="map-pill" href="https://maps.google.com/?q=Cl+58+27-32+Casa+Roca" target="_blank" rel="noopener noreferrer">
-          <span aria-hidden="true">📍</span> Cómo llegar
-        </a>
-      </nav>
+<div id="splash">
+<img src="logocasaroca.png" loading="eager">
+</div>
 
-      <div class="hero-grid">
-        <section class="hero-copy">
-          <p class="eyebrow">La Silla Vacía</p>
-          <h1 id="titulo-principal">Un llamado de la iglesia a impactar</h1>
-          <p class="lead">Comparte un mensaje cercano, claro y esperanzador con esa persona que hoy necesita volver a sentirse invitada.</p>
+<div class="container">
 
-          <div class="hero-actions" aria-label="Acciones principales">
-            <a class="btn btn-primary" href="#mensajes">Ver mensajes</a>
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=Cl+58+27-32+Casa+Roca" target="_blank" rel="noopener noreferrer">Ubicación</a>
-          </div>
-        </section>
+<div class="title">¡ UN LLAMADO DE LA IGLESIA A IMPACTAR !</div>
 
-        <aside class="verse-card" aria-label="Versículo principal">
-          <span>Mateo 28:19-20</span>
-          <p>«Nadie es tan fuerte como todos nosotros juntos, porque en nuestra unión habita la presencia misma de Dios»</p>
-        </aside>
-      </div>
-    </header>
+<a class="location" href="https://maps.google.com/?q=Cl+58+27-32+Casa+Roca" target="_blank">
+📍 Cl. 58 # 27-32 Casa Sobre la Roca
+</a>
 
-    <main id="mensajes" class="content">
-      <section class="section-head" aria-labelledby="mensajes-titulo">
-        <div>
-          <p class="eyebrow">Mensajes listos para compartir</p>
-          <h2 id="mensajes-titulo">Elige una invitación</h2>
-        </div>
-        <label class="search-box">
-          <span class="sr-only">Buscar mensaje</span>
-          <input id="search" type="search" autocomplete="off" placeholder="Buscar por nuevo, familia, hábitos...">
-        </label>
-      </section>
+<p class="invite-main">Mateo 28:19-20</p>
 
-      <div id="posts" class="cards-grid" aria-live="polite"></div>
-      <p id="emptyState" class="empty-state" hidden>No encontré mensajes con ese filtro.</p>
+<p class="frase">«Nadie es tan fuerte como todos nosotros juntos, porque en nuestra unión habita la presencia misma de Dios»</p>
 
-      <noscript>
-        <div class="noscript-card">
-          Para ver y compartir las invitaciones, activa JavaScript en el navegador.
-        </div>
-      </noscript>
-    </main>
+<div class="grid" id="posts"></div>
 
-    <footer class="footer">
-      <p>Cl. 58 # 27-32 · Casa Sobre la Roca</p>
-    </footer>
-  </div>
+</div>
 
-  <dialog class="viewer" id="viewer" aria-labelledby="viewerTitle">
-    <button class="viewer-close" id="closeViewer" type="button" aria-label="Cerrar vista previa">×</button>
-    <div class="viewer-body">
-      <img id="viewerImage" alt="" width="1080" height="1920" decoding="async">
-      <div class="viewer-panel">
-        <p class="eyebrow">Vista previa</p>
-        <h2 id="viewerTitle"></h2>
-        <p id="viewerText"></p>
-        <button id="viewerShare" class="btn btn-primary" type="button">Compartir imagen</button>
-        <a id="viewerDownload" class="btn btn-secondary" download>Descargar</a>
-      </div>
-    </div>
-  </dialog>
+<!-- Script optimizado -->
 
-  <script src="assets/js/app.js" defer></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script defer>
+
+const imagenes = [
+"11.png","12.png","13.png","14.png","15.png",
+"16.png","17.png","18.png","19.png","20.png"
+];
+
+const titulos = [
+"Para quien no ha vuelto",
+"Para el que cambió de dirección",
+"Para el nuevo",
+"Para un momento difícil",
+"Para el que está desanimado",
+"Para el que está avergonzado y con culpa",
+"Para el que cree que no necesita a Dios",
+"Para el que tiene problemas familiares",
+"Para el que lucha con malos hábitos",
+"Para quien es cabeza de familia"
+];
+
+async function compartir(btn, index){
+let card = btn.closest(".card");
+let titulo = card.querySelector(".titulo");
+let numero = card.querySelector(".mensaje-numero");
+
+titulo.style.display = "none";
+numero.style.display = "none";
+
+const canvas = await html2canvas(card, {
+backgroundColor: null,
+scale: 2,
+useCORS: true
+});
+
+titulo.style.display = "block";
+numero.style.display = "block";
+
+canvas.toBlob(blob => {
+
+const file = new File([blob], `post_${index}.png`, { type: "image/png" });
+
+if (navigator.canShare && navigator.canShare({ files: [file] })) {
+navigator.share({
+files: [file],
+title: "La Silla Vacía",
+text: "Te invito a la iglesia Casa sobre la Roca 🙌"
+});
+} else {
+let link = document.createElement("a");
+link.href = canvas.toDataURL();
+link.download = `post_${index}.png`;
+link.click();
+}
+
+});
+}
+
+const contenedor = document.getElementById("posts");
+
+imagenes.forEach((img, i) => {
+
+let card = document.createElement("div");
+card.className = "card";
+
+card.innerHTML = `
+<div class="mensaje-numero">Mensaje ${i+1}</div>
+<div class="titulo">${titulos[i]}</div>
+<img src="${img}" loading="lazy">
+<div class="share-btn" onclick="compartir(this, ${i+1})">
+<i class="fa-regular fa-share-from-square"></i>
+</div>
+`;
+
+contenedor.appendChild(card);
+
+});
+</script>
+
 </body>
 </html>
+
