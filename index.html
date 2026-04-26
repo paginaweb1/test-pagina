@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c2c">
+  <meta name="description" content="Invitación digital de Casa Sobre la Roca: La Silla Vacía.">
+  <title>La Silla Vacía | Casa Sobre la Roca</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" as="image" href="assets/img/logo/logo-500.webp" imagesrcset="assets/img/logo/logo-500.webp 500w" imagesizes="88px">
+  <link rel="preload" as="image" href="assets/img/posts/post-01-480.webp" imagesrcset="assets/img/posts/post-01-480.webp 480w, assets/img/posts/post-01-720.webp 720w, assets/img/posts/post-01-1080.webp 1080w" imagesizes="(max-width: 640px) 92vw, 280px">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#mensajes">Saltar al contenido</a>
+
+  <div class="page-shell">
+    <header class="hero" aria-labelledby="titulo-principal">
+      <nav class="topbar" aria-label="Navegación principal">
+        <a class="brand" href="./" aria-label="Inicio Casa Sobre la Roca">
+          <img src="assets/img/logo/logo-500.webp" width="64" height="64" alt="Logo Casa Sobre la Roca" decoding="async">
+          <span>Casa Sobre la Roca</span>
+        </a>
+        <a class="map-pill" href="https://maps.google.com/?q=Cl+58+27-32+Casa+Roca" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">📍</span> Cómo llegar
+        </a>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <p class="eyebrow">La Silla Vacía</p>
+          <h1 id="titulo-principal">Un llamado de la iglesia a impactar</h1>
+          <p class="lead">Comparte un mensaje cercano, claro y esperanzador con esa persona que hoy necesita volver a sentirse invitada.</p>
+
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a class="btn btn-primary" href="#mensajes">Ver mensajes</a>
+            <a class="btn btn-secondary" href="https://maps.google.com/?q=Cl+58+27-32+Casa+Roca" target="_blank" rel="noopener noreferrer">Ubicación</a>
+          </div>
+        </section>
+
+        <aside class="verse-card" aria-label="Versículo principal">
+          <span>Mateo 28:19-20</span>
+          <p>«Nadie es tan fuerte como todos nosotros juntos, porque en nuestra unión habita la presencia misma de Dios»</p>
+        </aside>
+      </div>
+    </header>
+
+    <main id="mensajes" class="content">
+      <section class="section-head" aria-labelledby="mensajes-titulo">
+        <div>
+          <p class="eyebrow">Mensajes listos para compartir</p>
+          <h2 id="mensajes-titulo">Elige una invitación</h2>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Buscar mensaje</span>
+          <input id="search" type="search" autocomplete="off" placeholder="Buscar por nuevo, familia, hábitos...">
+        </label>
+      </section>
+
+      <div id="posts" class="cards-grid" aria-live="polite"></div>
+      <p id="emptyState" class="empty-state" hidden>No encontré mensajes con ese filtro.</p>
+
+      <noscript>
+        <div class="noscript-card">
+          Para ver y compartir las invitaciones, activa JavaScript en el navegador.
+        </div>
+      </noscript>
+    </main>
+
+    <footer class="footer">
+      <p>Cl. 58 # 27-32 · Casa Sobre la Roca</p>
+    </footer>
+  </div>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewerTitle">
+    <button class="viewer-close" id="closeViewer" type="button" aria-label="Cerrar vista previa">×</button>
+    <div class="viewer-body">
+      <img id="viewerImage" alt="" width="1080" height="1920" decoding="async">
+      <div class="viewer-panel">
+        <p class="eyebrow">Vista previa</p>
+        <h2 id="viewerTitle"></h2>
+        <p id="viewerText"></p>
+        <button id="viewerShare" class="btn btn-primary" type="button">Compartir imagen</button>
+        <a id="viewerDownload" class="btn btn-secondary" download>Descargar</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

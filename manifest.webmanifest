@@ -1,0 +1,22 @@
+{
+  "name": "La Silla Vacía - Casa Sobre la Roca",
+  "short_name": "Casa Roca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071522",
+  "theme_color": "#0b1c2c",
+  "description": "Invitación digital para compartir mensajes de La Silla Vacía.",
+  "icons": [
+    {
+      "src": "assets/img/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
