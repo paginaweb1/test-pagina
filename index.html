@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Silla Vacía</title>
 
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+<meta name="theme-color" content="#0b1c2c">
+<link rel="icon" href="/test-pagina/favicon.png">
+
+<!-- PRELOAD LOGO -->
+<link rel="preload" as="image" href="/test-pagina/logocasaroca.webp">
+
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body{
@@ -25,13 +32,13 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 0.8s ease 1.8s forwards;
+animation:fadeOut 0.8s ease 1.5s forwards;
 }
 
 #splash img{
-width:75%;
-max-width:300px;
-animation:zoom 1s ease;
+width:70%;
+max-width:260px;
+animation:zoom 0.8s ease;
 }
 
 @keyframes zoom{
@@ -47,7 +54,7 @@ to{opacity:0; visibility:hidden;}
 .container{
 padding:12px;
 opacity:0;
-animation:show 0.6s ease 2s forwards;
+animation:show 0.5s ease 1.6s forwards;
 }
 
 @keyframes show{
@@ -56,18 +63,17 @@ to{opacity:1;}
 
 .title{
 text-align:center;
-font-size:22px;
+font-size:20px;
 margin-bottom:10px;
 font-weight:bold;
 }
 
-/* EFECTO MOSTAZA */
+/* EFECTO DORADO */
 @keyframes goldSweep {
 0%{background-position:-200% center;}
 100%{background-position:200% center;}
 }
 
-/* BOTÓN UBICACIÓN */
 .location{
 display:flex;
 justify-content:center;
@@ -89,14 +95,13 @@ background:linear-gradient(
 );
 
 background-size:200% auto;
-animation:goldSweep 5s linear infinite;
+animation:goldSweep 4s linear infinite;
 }
 
-/* TEXTOS */
 .invite-main{
 text-align:center;
 margin-bottom:8px;
-font-size:16px;
+font-size:15px;
 font-weight:bold;
 color:#e0c15a;
 }
@@ -114,19 +119,15 @@ font-style:italic;
 .grid{
 display:grid;
 grid-template-columns:repeat(5,1fr);
-gap:10px;
+gap:8px;
 }
 
 @media(max-width:900px){
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
+.grid{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media(max-width:500px){
-.grid{
-grid-template-columns:1fr;
-}
+.grid{ grid-template-columns:1fr; }
 }
 
 /* CARD */
@@ -134,20 +135,18 @@ grid-template-columns:1fr;
 border-radius:12px;
 overflow:hidden;
 position:relative;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-transform:translateY(20px);
+box-shadow:0 3px 8px rgba(0,0,0,0.3);
+transform:translateY(15px);
 opacity:0;
-animation:fadeUp 0.6s ease forwards;
+animation:fadeUp 0.5s ease forwards;
+will-change: transform, opacity;
 }
 
-.card:nth-child(odd){ animation-delay:0.2s; }
-.card:nth-child(even){ animation-delay:0.4s; }
+.card:nth-child(odd){ animation-delay:0.15s; }
+.card:nth-child(even){ animation-delay:0.3s; }
 
 @keyframes fadeUp{
-to{
-transform:translateY(0);
-opacity:1;
-}
+to{ transform:translateY(0); opacity:1; }
 }
 
 .card img{
@@ -160,9 +159,9 @@ display:block;
 position:absolute;
 top:0;
 width:100%;
-padding:5px;
+padding:4px;
 text-align:center;
-font-size:12px;
+font-size:11px;
 font-weight:bold;
 color:#000;
 
@@ -176,17 +175,17 @@ background:linear-gradient(
 );
 
 background-size:200% auto;
-animation:goldSweep 6s linear infinite;
+animation:goldSweep 5s linear infinite;
 }
 
 /* TITULO */
 .titulo{
 position:absolute;
-top:22px;
+top:20px;
 width:100%;
-padding:6px;
+padding:5px;
 text-align:center;
-font-size:14px;
+font-size:13px;
 font-weight:bold;
 background:rgba(0,0,0,0.6);
 }
@@ -194,9 +193,9 @@ background:rgba(0,0,0,0.6);
 /* SHARE */
 .share-btn{
 position:absolute;
-bottom:8px;
-right:8px;
-font-size:20px;
+bottom:6px;
+right:6px;
+font-size:18px;
 color:white;
 cursor:pointer;
 }
@@ -207,7 +206,7 @@ cursor:pointer;
 
 <!-- INTRO -->
 <div id="splash">
-<img src="/test-pagina/logocasaroca.png">
+<img src="/test-pagina/logocasaroca.webp">
 </div>
 
 <div class="container">
@@ -227,10 +226,18 @@ cursor:pointer;
 </div>
 
 <script>
-// ✅ RUTAS CORRECTAS (CARPETA ASSETS)
+// ⚡ IMÁGENES OPTIMIZADAS WEBP
 const imagenes = [
-"/test-pagina/11.png","/test-pagina/12.png","/test-pagina/13.png","/test-pagina/14.png","/test-pagina/15.png",
-"/test-pagina/16.png","/test-pagina/17.png","/test-pagina/18.png","/test-pagina/19.png","/test-pagina/20.png"
+"/test-pagina/11.webp",
+"/test-pagina/12.webp",
+"/test-pagina/13.webp",
+"/test-pagina/14.webp",
+"/test-pagina/15.webp",
+"/test-pagina/16.webp",
+"/test-pagina/17.webp",
+"/test-pagina/18.webp",
+"/test-pagina/19.webp",
+"/test-pagina/20.webp"
 ];
 
 const titulos = [
@@ -255,7 +262,7 @@ card.className = "card";
 card.innerHTML = `
 <div class="mensaje-numero">Mensaje ${i+1}</div>
 <div class="titulo">${titulos[i]}</div>
-<img src="${img}" loading="lazy">
+<img src="${img}" ${i === 0 ? 'loading="eager"' : 'loading="lazy"'} decoding="async">
 <div class="share-btn" onclick="compartir()">
 <i class="fa-regular fa-share-from-square"></i>
 </div>
@@ -273,7 +280,7 @@ text:"Te invito a la iglesia 🙌",
 url: location.href
 });
 }else{
-alert("Compartir no disponible en este dispositivo");
+window.open(`https://wa.me/?text=Te invito 🙌 ${location.href}`);
 }
 }
 </script>
