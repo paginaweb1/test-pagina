@@ -61,7 +61,7 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
-/* ✨ EFECTO MOSTAZA SUAVE */
+/* EFECTO MOSTAZA */
 @keyframes goldSweep {
 0%{background-position:-200% center;}
 100%{background-position:200% center;}
@@ -142,7 +142,7 @@ width:100%;
 display:block;
 }
 
-/* MENSAJE MOSTAZA */
+/* MENSAJE */
 .mensaje-numero{
 position:absolute;
 top:0;
@@ -194,7 +194,7 @@ cursor:pointer;
 
 <!-- INTRO -->
 <div id="splash">
-<img src="logocasaroca.png">
+<img src="./logocasaroca.png">
 </div>
 
 <div class="container">
@@ -214,10 +214,10 @@ cursor:pointer;
 </div>
 
 <script>
-// IMÁGENES (USA PNG O WEBP SEGÚN TENGAS)
+// 🔥 RUTAS CORREGIDAS PARA GITHUB
 const imagenes = [
-"11.png","12.png","13.png","14.png","15.png",
-"16.png","17.png","18.png","19.png","20.png"
+"./11.png","./12.png","./13.png","./14.png","./15.png",
+"./16.png","./17.png","./18.png","./19.png","./20.png"
 ];
 
 const titulos = [
@@ -251,7 +251,7 @@ card.innerHTML = `
 contenedor.appendChild(card);
 });
 
-// COMPARTIR (ligero)
+// COMPARTIR
 function compartir(){
 if(navigator.share){
 navigator.share({
@@ -260,11 +260,10 @@ text:"Te invito a la iglesia 🙌",
 url: location.href
 });
 }else{
-alert("Compartir no disponible");
+alert("Compartir no disponible en este dispositivo");
 }
 }
 </script>
 
 </body>
 </html>
-
