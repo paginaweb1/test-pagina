@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Silla Vacía</title>
-
-<!-- Carga optimizada de iconos -->
 
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
 
@@ -18,7 +15,7 @@ background:#0b1c2c;
 color:white;
 }
 
-/* SPLASH */
+/* INTRO */
 #splash{
 position:fixed;
 width:100%;
@@ -32,15 +29,14 @@ animation:fadeOut 1s ease 2s forwards;
 }
 
 #splash img{
-width:100%;
-max-width:400px;
-animation:zoom 1.5s ease;
-display:block;
+width:80%;
+max-width:320px;
+animation:zoom 1.2s ease;
 }
 
 @keyframes zoom{
-0%{transform:scale(0.8); opacity:0;}
-100%{transform:scale(1); opacity:1;}
+0%{transform:scale(0.8);opacity:0;}
+100%{transform:scale(1);opacity:1;}
 }
 
 @keyframes fadeOut{
@@ -49,7 +45,7 @@ to{opacity:0; visibility:hidden;}
 
 /* CONTENIDO */
 .container{
-padding:15px;
+padding:12px;
 opacity:0;
 animation:show 0.8s ease 2.2s forwards;
 }
@@ -60,43 +56,59 @@ to{opacity:1;}
 
 .title{
 text-align:center;
-font-size:28px;
+font-size:22px;
 margin-bottom:10px;
 font-weight:bold;
 }
 
-/* UBICACION */
+/* ✨ EFECTO REFLEJO DORADO */
+@keyframes goldSweep {
+0%{
+background-position: -200% center;
+}
+100%{
+background-position: 200% center;
+}
+}
+
+/* BOTÓN UBICACIÓN */
 .location{
 display:flex;
 justify-content:center;
 margin:10px auto;
-padding:12px 20px;
-border-radius:14px;
+padding:10px;
+border-radius:12px;
 text-decoration:none;
-font-size:14px;
+font-size:13px;
 font-weight:bold;
-color:#fff;
-background:linear-gradient(145deg,#1a1a1a,#d4af37);
-animation:goldGlow 3s infinite alternate;
+color:#000;
+
+background:linear-gradient(
+120deg,
+#d4af37 0%,
+#ffd700 25%,
+#fff3b0 50%,
+#ffd700 75%,
+#d4af37 100%
+);
+
+background-size:200% auto;
+animation:goldSweep 3s linear infinite;
 }
 
-@keyframes goldGlow{
-0%{box-shadow:0 0 5px #000;}
-100%{box-shadow:0 0 12px #d4af37;}
-}
-
+/* TEXTOS */
 .invite-main{
 text-align:center;
 margin-bottom:8px;
-font-size:18px;
+font-size:16px;
 font-weight:bold;
 color:#f5d27a;
 }
 
 .frase{
 text-align:center;
-font-size:14px;
-margin-bottom:20px;
+font-size:13px;
+margin-bottom:15px;
 color:#ddd;
 padding:0 10px;
 font-style:italic;
@@ -106,90 +118,88 @@ font-style:italic;
 .grid{
 display:grid;
 grid-template-columns:repeat(5,1fr);
-gap:12px;
+gap:10px;
 }
 
 @media(max-width:900px){
-.grid{grid-template-columns:repeat(2,1fr);}
+.grid{
+grid-template-columns:repeat(2,1fr);
 }
+}
+
 @media(max-width:500px){
-.grid{grid-template-columns:1fr;}
+.grid{
+grid-template-columns:1fr;
+}
 }
 
 /* CARD */
 .card{
-border-radius:15px;
+border-radius:12px;
 overflow:hidden;
 position:relative;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+will-change:transform;
 }
 
 .card img{
 width:100%;
-height:100%;
-object-fit:cover;
 display:block;
-content-visibility:auto;
 }
 
-/* MENSAJE */
+/* MENSAJE CON EFECTO */
 .mensaje-numero{
 position:absolute;
 top:0;
-left:0;
+width:100%;
+padding:5px;
+text-align:center;
+font-size:12px;
+font-weight:bold;
+color:#000;
+
+background:linear-gradient(
+120deg,
+#d4af37 0%,
+#ffd700 25%,
+#fff3b0 50%,
+#ffd700 75%,
+#d4af37 100%
+);
+
+background-size:200% auto;
+animation:goldSweep 4s linear infinite;
+}
+
+/* TITULO */
+.titulo{
+position:absolute;
+top:22px;
 width:100%;
 padding:6px;
 text-align:center;
 font-size:14px;
 font-weight:bold;
-background:rgba(212,175,55,0.85);
-color:#000;
-}
-
-.titulo{
-position:absolute;
-top:28px;
-left:0;
-width:100%;
-padding:8px;
-text-align:center;
-font-size:17px;
-font-weight:bold;
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.6);
 }
 
 /* SHARE */
 .share-btn{
 position:absolute;
-bottom:10px;
-right:10px;
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
+bottom:8px;
+right:8px;
+font-size:20px;
+color:white;
 cursor:pointer;
 }
-
-.share-btn i{
-font-size:22px;
-color:white;
-opacity:0.9;
-transition:0.3s;
-}
-
-.share-btn:hover i{
-color:#d4af37;
-transform:scale(1.15);
-}
 </style>
-
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div id="splash">
-<img src="logocasaroca.png" loading="eager">
+<img src="logocasaroca.png">
 </div>
 
 <div class="container">
@@ -208,12 +218,8 @@ transform:scale(1.15);
 
 </div>
 
-<!-- Script optimizado -->
-
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-<script defer>
-
+<script>
+// IMÁGENES
 const imagenes = [
 "11.png","12.png","13.png","14.png","15.png",
 "16.png","17.png","18.png","19.png","20.png"
@@ -232,47 +238,10 @@ const titulos = [
 "Para quien es cabeza de familia"
 ];
 
-async function compartir(btn, index){
-let card = btn.closest(".card");
-let titulo = card.querySelector(".titulo");
-let numero = card.querySelector(".mensaje-numero");
-
-titulo.style.display = "none";
-numero.style.display = "none";
-
-const canvas = await html2canvas(card, {
-backgroundColor: null,
-scale: 2,
-useCORS: true
-});
-
-titulo.style.display = "block";
-numero.style.display = "block";
-
-canvas.toBlob(blob => {
-
-const file = new File([blob], `post_${index}.png`, { type: "image/png" });
-
-if (navigator.canShare && navigator.canShare({ files: [file] })) {
-navigator.share({
-files: [file],
-title: "La Silla Vacía",
-text: "Te invito a la iglesia Casa sobre la Roca 🙌"
-});
-} else {
-let link = document.createElement("a");
-link.href = canvas.toDataURL();
-link.download = `post_${index}.png`;
-link.click();
-}
-
-});
-}
-
 const contenedor = document.getElementById("posts");
 
+// CREAR TARJETAS
 imagenes.forEach((img, i) => {
-
 let card = document.createElement("div");
 card.className = "card";
 
@@ -280,14 +249,26 @@ card.innerHTML = `
 <div class="mensaje-numero">Mensaje ${i+1}</div>
 <div class="titulo">${titulos[i]}</div>
 <img src="${img}" loading="lazy">
-<div class="share-btn" onclick="compartir(this, ${i+1})">
+<div class="share-btn" onclick="compartir()">
 <i class="fa-regular fa-share-from-square"></i>
 </div>
 `;
 
 contenedor.appendChild(card);
-
 });
+
+// COMPARTIR
+function compartir(){
+if(navigator.share){
+navigator.share({
+title:"La Silla Vacía",
+text:"Te invito a la iglesia 🙌",
+url: location.href
+});
+}else{
+alert("Compartir no disponible");
+}
+}
 </script>
 
 </body>
