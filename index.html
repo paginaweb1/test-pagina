@@ -25,17 +25,17 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:fadeOut 1s ease 2s forwards;
+animation:fadeOut 0.8s ease 1.8s forwards;
 }
 
 #splash img{
-width:80%;
-max-width:320px;
-animation:zoom 1.2s ease;
+width:75%;
+max-width:300px;
+animation:zoom 1s ease;
 }
 
 @keyframes zoom{
-0%{transform:scale(0.8);opacity:0;}
+0%{transform:scale(0.85);opacity:0;}
 100%{transform:scale(1);opacity:1;}
 }
 
@@ -47,7 +47,7 @@ to{opacity:0; visibility:hidden;}
 .container{
 padding:12px;
 opacity:0;
-animation:show 0.8s ease 2.2s forwards;
+animation:show 0.6s ease 2s forwards;
 }
 
 @keyframes show{
@@ -61,14 +61,10 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
-/* ✨ EFECTO REFLEJO DORADO */
+/* ✨ EFECTO MOSTAZA SUAVE */
 @keyframes goldSweep {
-0%{
-background-position: -200% center;
-}
-100%{
-background-position: 200% center;
-}
+0%{background-position:-200% center;}
+100%{background-position:200% center;}
 }
 
 /* BOTÓN UBICACIÓN */
@@ -85,15 +81,15 @@ color:#000;
 
 background:linear-gradient(
 120deg,
-#d4af37 0%,
-#ffd700 25%,
-#fff3b0 50%,
-#ffd700 75%,
-#d4af37 100%
+#8c6f1d 0%,
+#b8962e 30%,
+#e0c15a 50%,
+#b8962e 70%,
+#8c6f1d 100%
 );
 
 background-size:200% auto;
-animation:goldSweep 3s linear infinite;
+animation:goldSweep 5s linear infinite;
 }
 
 /* TEXTOS */
@@ -102,7 +98,7 @@ text-align:center;
 margin-bottom:8px;
 font-size:16px;
 font-weight:bold;
-color:#f5d27a;
+color:#e0c15a;
 }
 
 .frase{
@@ -139,7 +135,6 @@ border-radius:12px;
 overflow:hidden;
 position:relative;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
-will-change:transform;
 }
 
 .card img{
@@ -147,7 +142,7 @@ width:100%;
 display:block;
 }
 
-/* MENSAJE CON EFECTO */
+/* MENSAJE MOSTAZA */
 .mensaje-numero{
 position:absolute;
 top:0;
@@ -160,15 +155,15 @@ color:#000;
 
 background:linear-gradient(
 120deg,
-#d4af37 0%,
-#ffd700 25%,
-#fff3b0 50%,
-#ffd700 75%,
-#d4af37 100%
+#8c6f1d 0%,
+#b8962e 30%,
+#e0c15a 50%,
+#b8962e 70%,
+#8c6f1d 100%
 );
 
 background-size:200% auto;
-animation:goldSweep 4s linear infinite;
+animation:goldSweep 6s linear infinite;
 }
 
 /* TITULO */
@@ -219,7 +214,7 @@ cursor:pointer;
 </div>
 
 <script>
-// IMÁGENES
+// IMÁGENES (USA PNG O WEBP SEGÚN TENGAS)
 const imagenes = [
 "11.png","12.png","13.png","14.png","15.png",
 "16.png","17.png","18.png","19.png","20.png"
@@ -240,7 +235,6 @@ const titulos = [
 
 const contenedor = document.getElementById("posts");
 
-// CREAR TARJETAS
 imagenes.forEach((img, i) => {
 let card = document.createElement("div");
 card.className = "card";
@@ -257,7 +251,7 @@ card.innerHTML = `
 contenedor.appendChild(card);
 });
 
-// COMPARTIR
+// COMPARTIR (ligero)
 function compartir(){
 if(navigator.share){
 navigator.share({
